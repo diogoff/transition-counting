@@ -100,6 +100,34 @@ To run the GPU version of each algorithm, you can use instructions similar to th
 
 where the first argument is the number of runs, and the second argument is the number of _threads per block_ to be used on the GPU. Please check the hardware architecture of your GPU to determine the number of threads per block that should be used. As a rule of thumb, use a number of threads per block that is equal to the number of cores per SM (streaming multiprocessor). For example, all Maxwell generation cards (e.g. GTX 750 Ti, GTX 980, GTX Titan X) have 128 cores per SM.
 
+### Running a series of tests
+
+For convenience, we provide a Python script that runs all algorithms on all event logs. Note that the event logs must have been preprocessed first by `preproc.py` (see above).
+
+To run the tests, execute:
+
+- `python runtests.py`
+
+This will present the results in a similar form to Table 2 in the paper.
+
+### Testing on the BPI Challenge 2016 event logs
+
+To run the experiment that we describe in the paper, do the following:
+
+- Grab the largest event log for BPI Challenge 2016 (`BPI2016_Clicks_NOT_Logged_In.csv`) from [here](https://data.4tu.nl/repository/uuid:9b99a146-51b5-48df-aa70-288a76c82ec4).
+
+- We use the columns `SessionID` as case id, and `PAGE_NAME` both as task and user. Therefore, preprocess the event log with the following command:
+
+  `python preproc.py 0 5 5 2 BPI2016_Clicks_NOT_Logged_In.csv`
+
+- Run the flow algorithm on the GPU (adjust the number of threads per block according to the number of cores per SM):
+
+  `./flow_gpu 1 128 BPI2016_Clicks_NOT_Logged_In.pre`
+
+- Run the together algorithm on the CPU (adjust the number of threads according to the number of physical cores):
+
+  `./together_cpu 1 4 BPI2016_Clicks_NOT_Logged_In.pre`
+
 ### How to cite this work
 
 See the [publisher's website](https://link.springer.com/chapter/10.1007%2F978-3-319-58457-7_3) to download a citation in the desired format.
