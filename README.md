@@ -6,6 +6,8 @@ This repository contains the source code for the paper [Parallelization of Trans
 
 The source code comprises the following files:
 
+- `simulator.py` - A Python script to generate event logs of various sizes. The input parameter for this script is the number of cases that the event log should contain.
+
 - `preproc.py` - A Python script to do the preprocessing of the event log. This script receives a CSV file (.csv) as input and produces a binary file (.pre) as output.
 
 - `common.h` - Some common routines and variables used by all programs, namely to read the event log in the binary format (.pre) created by the previous script.
