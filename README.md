@@ -55,6 +55,7 @@ Use the `Makefile` to compile the code. However, before running `make`, change t
 ### Generating the event logs
 
 Use `simulator.py` to generate event logs with size ranging from 10 to 10<sup>7</sup> cases. For this purpose, run the following commands:
+
 - `python simulator.py 10 > eventlog_10.csv`
 - `python simulator.py 100 > eventlog_100.csv`
 - `python simulator.py 1000 > eventlog_1000.csv`
@@ -62,6 +63,27 @@ Use `simulator.py` to generate event logs with size ranging from 10 to 10<sup>7<
 - `python simulator.py 100000 > eventlog_100000.csv`
 - `python simulator.py 1000000 > eventlog_1000000.csv`
 - `python simulator.py 10000000 > eventlog_10000000.csv`
+
+### Preprocessing the event logs
+
+After generating the event logs, run the following commands to preprocess them:
+
+- `python preproc.py 0 1 2 3 eventlog_10.csv`
+- `python preproc.py 0 1 2 3 eventlog_100.csv`
+- `python preproc.py 0 1 2 3 eventlog_1000.csv`
+- `python preproc.py 0 1 2 3 eventlog_10000.csv`
+- `python preproc.py 0 1 2 3 eventlog_100000.csv`
+- `python preproc.py 0 1 2 3 eventlog_1000000.csv`
+- `python preproc.py 0 1 2 3 eventlog_10000000.csv`
+
+The arguments `0 1 2 3` specify that the _case id_ is in column 0 (first column), _task_ is in column 1, _user_ is in column 2, and _timestamp_ is in column 3, respectively.
+
+You may be surprised that preprocessing the largest event log can take about 5min. Most of this time is spent on reading the data (i.e. parsing the CSV file). This is precisely the reason why we decided to separate the preprocessing from the main programs. This way we can preprocess the event log only once, and then run several different programs on it, without having to reprocess it again.
+
+### Running the programs
+
+
+
 
 
 ### How to cite this work
