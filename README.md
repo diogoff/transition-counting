@@ -44,6 +44,14 @@ The source code comprises the following files:
 
 - `runtests.py` - A Python script that runs a series of tests and generates results in a similar form to Table 2 in the paper.
 
+### How to compile the code
+
+Operating system: Ubuntu (or another Linux distro).
+
+Check that you have all the necessary pre-requisites, namely [CUDA](https://developer.nvidia.com/cuda-downloads). Also, make sure that CUDA is properly configured, as described [here](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#post-installation-actions). A good place to configure the environment variables (`PATH` and `LD_LIBRARY_PATH`) is in `~/.bashrc`.
+
+Use the `Makefile` to compile the code. However, before running `make`, change the value of the `ARCH` variable to the compute capability of your GPU. For a list of GPUs and their compute capabilities, check [this page](https://developer.nvidia.com/cuda-gpus).
+
 ### How to cite this work
 
 See the [publisher's website](https://link.springer.com/chapter/10.1007%2F978-3-319-58457-7_3) to download a citation in the desired format.
