@@ -64,7 +64,7 @@ Use `simulator.py` to generate event logs with size ranging from 10 to 10<sup>7<
 - `python simulator.py 1000000 > eventlog_1000000.csv`
 - `python simulator.py 10000000 > eventlog_10000000.csv`
 
-Note that generating the largest event logs may take a significant amount of time.
+Note that generating the larger event logs may take a significant amount of time (several minutes).
 
 ### Preprocessing the event logs
 
