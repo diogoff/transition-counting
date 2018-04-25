@@ -1,11 +1,11 @@
-#define CUDA_CHECK(call)                                        \
-{                                                               \
-	cudaError_t error = call;                                   \
-	if (error != cudaSuccess)                                   \
-	{                                                           \
-		printf("CUDA Error: %s\n", cudaGetErrorString(error));  \
-		exit(1);                                                \
-	}                                                           \
+#define CUDA_CHECK(call)						\
+{									\
+	cudaError_t error = call;					\
+	if (error != cudaSuccess)					\
+	{								\
+		printf("CUDA Error: %s\n", cudaGetErrorString(error));	\
+		exit(1);						\
+	}								\
 }
 
 inline double seconds()
