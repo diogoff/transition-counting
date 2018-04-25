@@ -85,15 +85,19 @@ You may be surprised that preprocessing the largest event log can take about 5mi
 ### Running the programs
 
 To run the multi-threaded CPU version of each algorithm, you can use instructions similar to the following:
+
 - `./flow_cpu 100 4 eventlog_1000000.pre`
 - `./handover_cpu 100 4 eventlog_1000000.pre`
 - `./together_cpu 100 4 eventlog_1000000.pre`
+
 where the first argument is the number of runs, and the second argument is the number of threads. As a rule of thumb, set the number of threads to be equal to the number of physical cores available in the CPU.
 
 To run the GPU version of each algorithm, you can use instructions similar to the following:
+
 - `./flow_gpu 100 128 eventlog_1000000.pre`
 - `./handover_gpu 100 128 eventlog_1000000.pre`
 - `./together_gpu 100 128 eventlog_1000000.pre`
+
 where the first argument is the number of runs, and the second argument is the number of _threads per block_ to be used on the GPU. Please check the hardware architecture of your GPU to determine the number of threads per block that should be used. As a rule of thumb, use a number of threads per block that is equal to the number of cores per SM (streaming multiprocessor). For example, all Maxwell generation cards (e.g. GTX 750 Ti, GTX 980, GTX Titan X) have 128 cores per SM.
 
 ### How to cite this work
