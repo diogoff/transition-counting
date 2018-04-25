@@ -52,6 +52,18 @@ Check that you have all the necessary pre-requisites, namely [CUDA](https://deve
 
 Use the `Makefile` to compile the code. However, before running `make`, change the value of the `ARCH` variable to the compute capability of your GPU. For a list of GPUs and their compute capabilities, check [this page](https://developer.nvidia.com/cuda-gpus).
 
+### Generating the event logs
+
+Use `simulator.py` to generate event logs with size ranging from 10 to 10<sup>7</sup> cases. For this purpose, run the following commands:
+- `python simulator.py 10 > eventlog_10.csv`
+- `python simulator.py 100 > eventlog_100.csv`
+- `python simulator.py 1000 > eventlog_1000.csv`
+- `python simulator.py 10000 > eventlog_10000.csv`
+- `python simulator.py 100000 > eventlog_100000.csv`
+- `python simulator.py 1000000 > eventlog_1000000.csv`
+- `python simulator.py 10000000 > eventlog_10000000.csv`
+
+
 ### How to cite this work
 
 See the [publisher's website](https://link.springer.com/chapter/10.1007%2F978-3-319-58457-7_3) to download a citation in the desired format.
