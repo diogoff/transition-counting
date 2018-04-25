@@ -64,6 +64,8 @@ Use `simulator.py` to generate event logs with size ranging from 10 to 10<sup>7<
 - `python simulator.py 1000000 > eventlog_1000000.csv`
 - `python simulator.py 10000000 > eventlog_10000000.csv`
 
+Note that generating the largest event logs may take a significant amount of time.
+
 ### Preprocessing the event logs
 
 After generating the event logs, run the following commands to preprocess them:
@@ -82,7 +84,11 @@ You may be surprised that preprocessing the largest event log can take about 5mi
 
 ### Running the programs
 
+To run the multi-threaded CPU version of each algorithm, you can use instructions similar to the following:
 
+- `./flow_cpu 100 4 eventlog_1000000.pre`
+- `./handover_cpu 100 4 eventlog_1000000.pre`
+- `./together_cpu 100 4 eventlog_1000000.pre`
 
 
 
